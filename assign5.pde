@@ -571,13 +571,13 @@ String convertFramesToTimeString(int frames){	// Requirement #4
   String ss = str(0);
   String mm = str(0);
   
-  if(frames/60>=119.5){
+  if(frames/60>=120){
     mm = str(2);
     ss = nf(frames/60-120,2);
     return "0"+mm+":"+ss;
   }
     
-  if(frames/60>=60){
+  if(frames/60>=60 && frames/60<=119){
     mm = str(1);
     ss = nf(frames/60-60,2);
     return "0"+mm+":"+ss;
