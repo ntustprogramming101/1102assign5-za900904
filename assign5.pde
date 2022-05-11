@@ -571,46 +571,24 @@ String convertFramesToTimeString(int frames){	// Requirement #4
   String ss = str(0);
   String mm = str(0);
   
-    if(frames/60>=130){
+  if(frames/60>=120){
     mm = str(2);
-    ss = str(frames/60.0-120);
+    ss = nf(frames/60-120,2);
     return "0"+mm+":"+ss;
-    }
+  }
     
-    if(frames/60>=120 && frames/60<130){
-    mm = str(2);
-    ss = str(frames/60.0-120);
-    return "0"+mm+":"+"0"+ss;
-    }
-    
-    if(frames/60>=70 &&frames/60<120){
+  if(frames/60>=60){
     mm = str(1);
-    ss = str(frames/60.0-60);
-    return "0"+mm+":"+ss;
-    }
-  
-  if(frames/60<70 && frames/60>=60){
-    mm = str(1);
-    ss = str(frames/60.0-60);
-    return "0"+mm+":"+"0"+ss;
-    }
-    
-  if(frames/60>=10 && frames/60<60){
-    mm = str(0);
-    ss = str(frames/60.0);
+    ss = nf(frames/60-60,2);
     return "0"+mm+":"+ss;
   }
   
-  
-  if(frames>0 && frames/60<10){
+  if(frames/60>=0){
     mm = str(0);
-    ss = str(frames/60);
-    return "0"+mm+":"+"0"+ss;
+    ss = nf(frames/60,2);
+    return "0"+mm+":"+ss;
   }
-  
     return "0"+mm+":"+"0"+ss;
-    
-
 }
 
 color getTimeTextColor(int frames){				// Requirement #5
