@@ -570,7 +570,7 @@ boolean isHit(float ax, float ay, float aw, float ah, float bx, float by, float 
 String convertFramesToTimeString(int frames){	// Requirement #4
   String ss = str(0);
   String mm = str(0);
-    if(frames/60>=130){
+    if(floor(frames/60)>=130){
     mm = str(2);
     ss = str(floor(frames/60)-120);
     return "0"+mm+":"+ss;
@@ -590,7 +590,7 @@ String convertFramesToTimeString(int frames){	// Requirement #4
   
   if(frames/60<70 && frames/60>=60){
     mm = str(1);
-    ss = str(frames/60-60);
+    ss = str(floor(frames/60)-60);
     return "0"+mm+":"+"0"+ss;
     }
     
