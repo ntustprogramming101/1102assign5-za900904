@@ -77,9 +77,6 @@ void setup() {
 		}
 	}
 
-  float [] cautionX;
-  cautionX = new float[6];
-
 	// Load PImage[][] stones
 	stones = new PImage[2][5];
 	for(int i = 0; i < stones.length; i++){
@@ -575,19 +572,19 @@ String convertFramesToTimeString(int frames){	// Requirement #4
   String mm = str(0);
     if(frames/60>=130){
     mm = str(2);
-    ss = str(frames/60-120);
+    ss = str(floor(frames/60)-120);
     return "0"+mm+":"+ss;
     }
     
     if(frames/60>=120 && frames/60<130){
     mm = str(2);
-    ss = str(frames/60-120);
+    ss = str(floor(frames/60)-120);
     return "0"+mm+":"+"0"+ss;
     }
     
     if(frames/60>=70 &&frames/60<120){
     mm = str(1);
-    ss = str(frames/60-60);
+    ss = str(floor(frames/60)-60);
     return "0"+mm+":"+ss;
     }
   
