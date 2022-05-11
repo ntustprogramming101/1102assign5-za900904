@@ -593,13 +593,13 @@ String convertFramesToTimeString(int frames){	// Requirement #4
 
 color getTimeTextColor(int frames){				// Requirement #5
 
-    if(frames/60>=120){
+  if(frames/60>=120){
     return #00ffff;
-    }
+  }
   
   if(frames/60<120 && frames/60>=60){
     return #ffffff;
-    }
+  }
     
   if(frames/60<60 && frames/60>=30){
     return #ffcc00;
@@ -637,7 +637,6 @@ void drawCaution(){								// Requirement #6
     if(CautionExist==i){
       image(caution,soldierX[i],soldierY[i]-SOIL_SIZE);
     }
-println(CautionExist);
   }
   
 	// Draw a caution sign above the enemy under the screen using int getEnemyIndexByRow(int row)
