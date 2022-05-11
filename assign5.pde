@@ -570,41 +570,41 @@ boolean isHit(float ax, float ay, float aw, float ah, float bx, float by, float 
 String convertFramesToTimeString(int frames){	// Requirement #4
   String ss = str(0);
   String mm = str(0);
-  int time = floor(frames/60);
-    if(time>=130){
+  
+    if(frames/60>=130){
     mm = str(2);
-    ss = str(time-120);
+    ss = str(frames/60.0-120);
     return "0"+mm+":"+ss;
     }
     
-    if(time>=120 && time<130){
+    if(frames/60>=120 && frames/60<130){
     mm = str(2);
-    ss = str(time-120);
+    ss = str(frames/60.0-120);
     return "0"+mm+":"+"0"+ss;
     }
     
-    if(time>=70 &&time<120){
+    if(frames/60>=70 &&frames/60<120){
     mm = str(1);
-    ss = str(time-60);
+    ss = str(frames/60.0-60);
     return "0"+mm+":"+ss;
     }
   
-  if(time<70 && time>=60){
+  if(frames/60<70 && frames/60>=60){
     mm = str(1);
-    ss = str(time-60);
+    ss = str(frames/60.0-60);
     return "0"+mm+":"+"0"+ss;
     }
     
-  if(time>=10 && time<60){
+  if(frames/60>=10 && frames/60<60){
     mm = str(0);
-    ss = str(time);
+    ss = str(frames/60.0);
     return "0"+mm+":"+ss;
   }
   
   
-  if(time>0 && time<10){
+  if(frames>0 && frames/60<10){
     mm = str(0);
-    ss = str(time);
+    ss = str(frames/60);
     return "0"+mm+":"+"0"+ss;
   }
   
