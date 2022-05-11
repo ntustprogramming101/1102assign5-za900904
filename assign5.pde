@@ -601,15 +601,23 @@ String convertFramesToTimeString(int frames){	// Requirement #4
 
 color getTimeTextColor(int frames){				// Requirement #5
 
-  if(frames/60>=120){
+  if(frames/60>120){
     return #00ffff;
   }
   
-  if(frames/60<120 && frames/60>=60){
+  if(frames/60>=119 && frames/60<=121){
+    return #00ffff;
+  }
+  
+  if(frames/60<120 && frames/60>60){
+    return #ffffff;
+  }
+  
+  if(frames/60>=59 && frames/60<=61){
     return #ffffff;
   }
     
-  if(frames/60<60 && frames/60>=30){
+  if(frames/60<59 && frames/60>=30){
     return #ffcc00;
   }
   
