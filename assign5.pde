@@ -577,7 +577,7 @@ String convertFramesToTimeString(int frames){	// Requirement #4
     return "0"+mm+":"+ss;
   }
     
-  if(frames/60>60){
+  if(frames/60>59){
     mm = str(1);
     ss = nf(frames/60-60,2);
     return "0"+mm+":"+ss;
